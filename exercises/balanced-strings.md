@@ -26,3 +26,21 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 
 ## Answer
 
+Partitionnement de l'ensemble d'entree et generation de données de test:
+l'ensemble des combinaison de symbole (;);{;};];[; est infini donc il faut partionner cet ensemble pour extraire un ensemble fini de cet ensemble qui permet d'entendre le comportement de notre fonction à l'ensemble infini des combinaisons de l'ensemble des symboles;
+pour y arriver nous allons partitionner  l'ensemble E des combinaison des symboles en en 5 ensembles comme suite:
+ 
+Pn l'emsemble des symboles de la forme {(...)} contenant n symboles et qui est balanced;
+soit p2={([])};{[()]};[({})];[{()}];({[]});([{}]);
+ 
+Qn la concatenation deux elements de pn aleatoire un exemple de Q2 est {([])}([{}]);
+ 
+Tn  l'ensemble des elements de la forme Qn avec au moins un symbole inversé ; un exemple de T2 est :{([])}([{}](;
+ 
+Fn une combinaison aleatoire de n symboles quelconque;
+ 
+ #pour les generation des données de test on procedera comme suite:
+ 	* on choisie un nombre n ; 
+ 	*on genere les ensembles Pn;Qn;Tn;Fn;
+ 	le test doit etre true sur les ensemble Pn,Qn, et false sur l'emsemble Tn .
+ 	sur l'ensemble Fn on verifira si la chaine est des Pn ou Qn alors le test doit etre true sinon le test doit etre false.
