@@ -15,17 +15,18 @@ Answer the following questions:
 1. The assertion is false because the type (int, float,...) of the result of the calculation is not defined the language will represent it in the most general type which is double, consequently the machine does not know how to represent 0.1 (it represents it approximately) of or this incorrect result. To make this type of comparison, it is necessary to put the result of calculation 3*0.4 in a variable while forcing the type (foat resulta=(float) 3*0.4) then to make the comparison with this variable
 	remark="see how the machine codes to make the calculations"
 
-2. assertEqual compares the value of two objects while assertSame compares the reference of two objects;
-assertEqual uses the equals() method which is always redefined to give the order relationship used to compare the values of our objects; assertSame uses ==;
-however when the equals() method is not redefined then the asserts do the same comparison which is the reference comparison;
+2. AssertEqual compares the value of two objects while assertSame compares the reference of two objects;
+assertEqual uses the equals() method which is always redefined to give the order relationship used to compare the values of our objects; assertSame uses == ; however when the equals() method is not redefined then the asserts do the same comparison which is the reference comparison;
 Assuming that the equals() method is up to date here are two scenarios:
-scenario of inegality:
+
+- scenario of inegality:
 	int a=25;
 	int b=25;
 	assertEquals(a,b)=!assertShame(a,b) 
 	assertEquals(a,b)=true because both objects have the same value according to the integer comparison (25=25)
 	assertShame(a,b)=false because variables a and b point to different memory locations
-equality scenario:
+
+- equality scenario:
 	int a=25;
 	int b=a;
 	assertEquals(a,b)=assertShame(a,b) 
@@ -47,6 +48,7 @@ We can call fail() when a result doesn't meet some desired condition:
 		fail("Result cannot exceed integer max value");
 	    }
 	}
+    
 it can be used to fail a test when a code that a program does not finish at the right time.
 	@Test
 	public void returnBefore() {
